@@ -1,0 +1,2 @@
+cuda 8.0 与 opencv 3 不太兼容
+cuda gcc version 不支持5.0以上
