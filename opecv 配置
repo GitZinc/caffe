@@ -1,2 +1,26 @@
 cuda 8.0 与 opencv 3 不太兼容
 cuda gcc version 不支持5.0以上
+
+sudo rm -rf /usr/local/lib/libcurl.so.4
+ln -s /usr/lib/x86_64-linux-gnu/libcurl.so.4.4.0 /usr/local/lib/libcurl.so.4
+链接损坏？
+
+# gcc 版本切换
+sudo update-alternatives --remove-all gcc
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 40
+
+#对默认gcc进行配置
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+
+首先，看一下你的Ubuntu都装了哪些版本的gcc 用命令：ls /usr/bin/gcc* -l  我的显示是
+
+由上面显示可以看出默认安装的是gcc-4.6，现在来改成gcc-4.4
+
+删除gcc－4.6的软连接文件/usr/bin/gcc。（只是删除软连接）
+
+命令：sudo rm /usr/bin/gcc
+然后建一个软连接，指向gcc-4.8。
+
+命令：sudo ln -s /usr/bin/gcc-4.8 /usr/bin/gcc
