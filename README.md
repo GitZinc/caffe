@@ -10,4 +10,4 @@ caffe train -solver examples/mnist/lenet_solver.prototxt -snapshot examples/mnis
 caffe train -solver examples/finetuning_on_flickr_style/solver.prototxt -weights models/bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel
 
 # anaconda python 2 3的切换
-source activate py3
+source activate test_py3
